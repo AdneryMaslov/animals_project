@@ -1,0 +1,13 @@
+fastapi
+uvicorn[standard]
+pydantic-settings
+asyncpg
+numpy
+opencv-python-headless
+python-multipart
+
+#ML
+torch
+torchvision
+tensorflow
+Pillow
