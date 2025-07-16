@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  # Сервис для Базы данных PostgreSQL
+  db:
+    image: postgres:15-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+      - ./backend/init.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=mastdmastd
+      - POSTGRES_DB=animals
+    ports:
+      - "5433:5432"
+
+  # Сервис для Бэкенда
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend/passports:/app/passports
+      - ./backend/uploads:/app/uploads
+    environment:
+      - DB_USER=postgres
+      - DB_PASS=mastdmastd
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_NAME=animals
+    depends_on:
+      - db
+
+  # Сервис для Фронтенда
+  frontend:
+    build:
+      context: ./frontend/my-react-app
+      args:
+        - VITE_API_BASE_URL=http://localhost:8000
+    ports:
+      # ИЗМЕНЕНО: Используем порт 3000 вместо 80
+      - "3000:80"
+    # УДАЛЕНО: Ненужная и неверная секция environment
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:
