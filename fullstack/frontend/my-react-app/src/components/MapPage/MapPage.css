@@ -1,0 +1,46 @@
+.map-page-container {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 70px);
+    width: 100%;
+}
+
+.map-controls {
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+    text-align: center;
+}
+
+.map-controls h2 {
+    margin-top: 0;
+    font-family: 'OpenSans Bold', sans-serif;
+}
+
+.map-controls p {
+    color: #6c757d;
+    margin-bottom: 1rem;
+}
+
+.passport-select {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    min-width: 300px;
+}
+
+.map-view {
+    flex-grow: 1;
+    width: 100%;
+    z-index: 1;
+}
+
+.loading-text, .error-text {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+.error-text {
+    color: #dc3545;
+}

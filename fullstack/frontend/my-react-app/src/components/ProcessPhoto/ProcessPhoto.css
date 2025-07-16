@@ -1,0 +1,39 @@
+/*
+ * Стили для экрана загрузки
+ */
+
+/* Контейнер, который занимает все доступное место и центрирует содержимое */
+.loading-overlay {
+    display: flex;
+    flex-direction: column; /* Располагаем элементы друг под другом */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /* Высота экрана минус высота навигационной панели */
+    height: calc(100vh - 70px);
+    background-color: #f8f9fa; /* Слегка серый фон */
+}
+
+/* Стили для анимированного спиннера */
+.loader {
+    border: 8px solid #e3e3e3; /* Светло-серая основа круга */
+    border-top: 8px solid #0d6efd; /* Синий цвет для анимации */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1.5s linear infinite; /* Анимация вращения */
+}
+
+/* Стили для текста загрузки */
+.loadText {
+    margin-top: 25px; /* Отступ от спиннера */
+    font-size: 1.5rem; /* Увеличиваем шрифт */
+    font-family: 'OpenSans Bold', sans-serif;
+    color: #555; /* Не слишком темный цвет */
+}
+
+/* Анимация вращения для спиннера */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

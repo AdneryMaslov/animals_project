@@ -1,0 +1,620 @@
+.result-page-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.result-header {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.name_of_block {
+    font-family: 'OpenSans Bold', sans-serif;
+    font-size: 2rem;
+    color: #333;
+    margin: 0;
+    text-align: center;
+    grid-column: 2 / 3;
+}
+
+.finish-button {
+    background-color: #dc3545;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-family: 'OpenSans Bold', sans-serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border: none;
+    white-space: nowrap;
+    transition: background-color 0.2s ease;
+    grid-column: 3 / 4;
+    justify-self: end;
+}
+
+.finish-button:hover {
+    background-color: #c82333;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1rem;
+    width: 100%;
+    max-width: 350px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    background-color: #e9ecef;
+    border-radius: 12px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-family: 'OpenSans Bold', sans-serif;
+    color: #0d6efd;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #6c757d;
+    text-align: center;
+}
+
+.work_answer {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 2rem;
+    width: 100%;
+    align-items: flex-start;
+}
+
+.diagram {
+    padding: 1.5rem;
+    border-radius: 12px;
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pie-chart-name {
+    font-family: 'OpenSans Bold', sans-serif;
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 1rem;
+    width: 100%;
+    text-align: center;
+}
+
+.table {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    border-radius: 12px;
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.results-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.results-table th, .results-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-family: 'OpenSans', sans-serif;
+}
+
+.filename-cell {
+    max-width: 250px;
+    word-break: break-all;
+}
+
+.results-table thead th {
+    background-color: #e9ecef;
+    font-family: 'OpenSans Bold', sans-serif;
+    color: #495057;
+}
+
+.results-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.underline {
+    text-decoration: underline;
+    cursor: pointer;
+    color: #007bff;
+}
+
+.actionable-row td {
+    vertical-align: middle;
+}
+
+.action-cell {
+    position: relative;
+}
+
+.action-button {
+    background-color: #ffc107;
+    color: #212529;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-family: 'OpenSans Bold';
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.action-button:hover {
+    background-color: #ffca2c;
+}
+
+.action-panel {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.action-panel p {
+    margin: 0 0 5px 0;
+    font-size: 14px;
+    text-align: center;
+}
+
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.create-new-btn, .assign-existing button {
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.create-new-btn {
+    background-color: #0d6efd;
+    color: white;
+}
+
+.assign-existing {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.assign-existing select {
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    padding: 8px 5px;
+}
+
+.assign-existing button {
+    background-color: #198754;
+    color: white;
+}
+.assign-existing button:disabled {
+    background-color: #ccc;
+}
+
+.cancel-btn {
+    font-size: 12px;
+    color: #6c757d;
+    background: none;
+    border: none;
+    text-decoration: underline;
+    cursor: pointer;
+    align-self: center;
+    margin-top: 5px;
+}
+
+/*
+ * ========================================================
+ * ==   СТИЛИ ДЛЯ МОДАЛЬНЫХ ОКОН (ИЗ animals.css)        ==
+ * ========================================================
+*/
+.modal-add-passport, .result-passport-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1002;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0s 0.3s;
+}
+
+.modal-add-passport.visible, .result-passport-modal.visible {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease;
+}
+
+.add-passport-container, .animal-passport-wrapper {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+  padding: 2rem;
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-add-passport.visible .add-passport-container,
+.result-passport-modal.visible .animal-passport-wrapper {
+    transform: scale(1);
+}
+
+.modal-title {
+    font-family: 'OpenSans Bold';
+    font-size: 20px;
+    margin: 0 0 1.5rem 0;
+    text-align: center;
+    color: #333;
+}
+
+.add-passport-container .close, .animal-passport-wrapper .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 2.2rem;
+    font-weight: 300;
+    color: #888;
+    cursor: pointer;
+    background: none;
+    border: none;
+    line-height: 1;
+}
+
+.inputs_passport {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.add_name {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.add_name label {
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.add_name input {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.inputs_passport button {
+    padding: 0.8rem 1.5rem;
+    background-color: #28a745;
+    border-radius: 8px;
+    color: white;
+    border: none;
+    margin-top: 10px;
+    font-size: 1rem;
+    font-family: 'OpenSans Bold';
+    cursor: pointer;
+    transition: background-color 0.2s;
+    width: 100%;
+}
+
+.inputs_passport button:hover {
+    background-color: #218838;
+}
+
+.modal-info {
+    font-size: 13px;
+    color: #888;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.passport-modal-name {
+    font-family: 'OpenSans Bold';
+    font-size: 20px;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.photo-gallery {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.gallery-image {
+    width: 100%;
+    height: 300px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.gallery-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.gallery-arrow {
+    background-color: #eee;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.gallery-counter {
+    font-family: 'OpenSans Light';
+    font-size: 14px;
+    color: #666;
+}
+
+.passport-item {
+    font-family: 'OpenSans Light';
+    margin-bottom: 0.75rem;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 0.75rem;
+}
+.passport-item:last-child {
+    border-bottom: none;
+}
+.passport-item label {
+    font-weight: bold;
+    color: #555;
+    margin-right: 8px;
+}
+
+.passport-history {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+    width: 100%;
+}
+
+.passport-history h4 {
+    margin: 0 0 0.5rem 0;
+    font-family: 'OpenSans Bold';
+    color: #333;
+}
+
+.passport-history ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+    max-height: 150px;
+    overflow-y: auto;
+    font-family: 'OpenSans Light';
+}
+
+.passport-history li {
+    background-color: #f8f8f8;
+    padding: 8px 12px;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+@media (max-width: 900px) {
+    .work_answer {
+        grid-template-columns: 1fr;
+    }
+
+    .diagram, .table {
+        max-width: 340px;
+        justify-self: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .result-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .finish-button {
+        justify-self: auto;
+    }
+
+    .stats-container {
+        flex-direction: column;
+        gap: 1rem;
+        max-width: none;
+    }
+}
+
+
+
+/*
+ * ========================================================
+ * ==   НОВЫЕ СТИЛИ: Для всплывающих уведомлений         ==
+ * ========================================================
+*/
+
+.notification-banner {
+    position: fixed;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 25px;
+    border-radius: 8px;
+    color: white;
+    font-family: 'OpenSans Bold', sans-serif;
+    font-size: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 9999;
+    transition: top 0.5s ease-in-out;
+}
+
+.notification-banner.show {
+    top: 20px;
+}
+
+.notification-banner.success {
+    background-color: #28a745;
+}
+
+.notification-banner.error {
+    background-color: #dc3545;
+}
+
+.action-success-text {
+    color: #198754; /* Зеленый цвет */
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Стили для кликабельного имени файла в таблице */
+.clickable-filename {
+    color: #0d6efd;
+    cursor: pointer;
+    text-decoration: underline;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.clickable-filename:hover {
+    color: #0a58ca;
+}
+
+
+/*
+ * ========================================================
+ * ==   НОВЫЕ СТИЛИ: Для модального окна с фото          ==
+ * ========================================================
+*/
+
+/* Фон-оверлей для модального окна */
+.image-preview-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Делаем фон чуть темнее */
+    z-index: 1002;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0s 0.3s;
+}
+
+.image-preview-modal.visible {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease;
+}
+
+/* Контейнер для самого изображения */
+.image-preview-wrapper {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.image-preview-modal.visible .image-preview-wrapper {
+    transform: scale(1);
+}
+
+/* Стили для изображения внутри модалки */
+.image-preview-wrapper img {
+    display: block;
+    max-width: 100%;
+    max-height: 90vh; /* Ограничиваем высоту, чтобы влезало в экран */
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.image-preview-wrapper .close {
+    position: absolute;
+    top: -1px;
+    right: 5px;
+    font-size: 2.5rem;
+    color: white;
+    cursor: pointer;
+    background: none;
+    border: none;
+    line-height: 1;
+    text-shadow: 0 1px 5px rgba(0,0,0,0.7);
+}

@@ -1,0 +1,54 @@
+@font-face {
+    font-family: 'OpenSans';
+    src: url(./fonts/Open_Sans/OpenSans-VariableFont_wdth,wght.ttf);
+}
+
+@font-face {
+    font-family: 'OpenSans Bold';
+    src: url(./fonts/Open_Sans/static/OpenSans-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'OpenSans Light';
+    src: url(./fonts/Open_Sans/static/OpenSans-Light.ttf);
+}
+
+@font-face {
+    font-family: 'OpenSans Extra Bold';
+    src: url(./fonts/Open_Sans/static/OpenSans-ExtraBold.ttf);
+}
+
+/* Глобальные сбросы и настройки */
+* {
+    box-sizing: border-box;
+    font-family: 'OpenSans', sans-serif;
+    color: #333;
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+#root {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-content-area {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.name-of-str {
+    font-family: 'OpenSans Bold';
+    font-size: 25px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
